@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qr_code_attendence_system/welcome_screen.dart';
 import 'package:qr_code_attendence_system/main_screen.dart';
-// import 'package:qr_code_attendence_system/login_screen.dart';
+import 'package:qr_code_attendence_system/login_screen.dart';
 import 'package:qr_code_attendence_system/registration_screen.dart';
 
 void main() {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => WelcomeScreen(),
         '/MainScreen': (context) => MainScreen(),
-        // '/LoginScreen':(context)=>LoginScreen(),
+        '/LoginScreen':(context)=>LoginScreen(),
         '/RegistrationScreen':(context)=>RegistrationScreen(),
       },
     );

@@ -11,8 +11,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(title:Text('Registration Screen'),backgroundColor: Colors.teal,),
         body:Container(
-            child:Text('this is Registration page')
+
         ),
       ),
 

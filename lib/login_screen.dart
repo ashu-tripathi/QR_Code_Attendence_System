@@ -1,3 +1,24 @@
+import 'package:flutter/material.dart';
+
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({Key key}) : super(key: key);
+
+  @override
+  _LoginScreenState createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(title:Text('Login Screen'),backgroundColor: Colors.teal,),
+        body: Container(),
+      ),
+    );
+  }
+}
+
 // import 'package:flutter/material.dart';
 // import 'package:cloud_firestore/cloud_firestore.dart' show FirebaseFirestore;
 // // import 'package:comperio/checkInternet.dart';
