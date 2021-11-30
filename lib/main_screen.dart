@@ -63,14 +63,14 @@ class MainScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(18.0),
                         ),
                         onPressed: () {
-                          Navigator.pushNamed(context, '/RegistrationScreen');
+                          Navigator.pushNamed(context, '/FacultyPage');
                         },
 
                         // color: Color(0xff311b92),
                         color: Colors.green,
                         textColor: Colors.white,
                         child: Text(
-                          'Register',
+                          'FacPage',
                           style: TextStyle(fontSize: 15),
                         ),
                       ),
@@ -101,14 +101,14 @@ class MainScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(18.0),
                         ),
                         onPressed: () {
-                          Navigator.pushNamed(context, '/LoginScreen');
+                          Navigator.pushNamed(context, '/RegistrationScreen');
                         },
 
                         // color: Color(0xff311b92),
                         color: Colors.green,
                         textColor: Colors.white,
                         child: Text(
-                          'Login',
+                          'Registor',
                           style: TextStyle(fontSize: 15),
                         ),
                       ),
@@ -122,14 +122,14 @@ class MainScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(18.0),
                         ),
                         onPressed: () {
-                          Navigator.pushNamed(context, '/RegistrationScreen');
+                          Navigator.pushNamed(context, '/StudentPage');
                         },
 
                         // color: Color(0xff311b92),
                         color: Colors.green,
                         textColor: Colors.white,
                         child: Text(
-                          'Register',
+                          'StudtPage',
                           style: TextStyle(fontSize: 15),
                         ),
                       ),

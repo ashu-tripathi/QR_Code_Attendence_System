@@ -3,6 +3,8 @@ import 'package:qr_code_attendence_system/welcome_screen.dart';
 import 'package:qr_code_attendence_system/main_screen.dart';
 import 'package:qr_code_attendence_system/login_screen.dart';
 import 'package:qr_code_attendence_system/registration_screen.dart';
+import 'package:qr_code_attendence_system/student_page.dart';
+import 'package:qr_code_attendence_system/faculty_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,6 +21,9 @@ class MyApp extends StatelessWidget {
         '/MainScreen': (context) => MainScreen(),
         '/LoginScreen':(context)=>LoginScreen(),
         '/RegistrationScreen':(context)=>RegistrationScreen(),
+        '/StudentPage':(context)=>StudentPage(),
+        '/FacultyPage':(context)=>FacultyPage(),
+
       },
     );
   }
