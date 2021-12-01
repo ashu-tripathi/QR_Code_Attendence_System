@@ -108,7 +108,7 @@ class MainScreen extends StatelessWidget {
                         color: Colors.green,
                         textColor: Colors.white,
                         child: Text(
-                          'Registor',
+                          'Register',
                           style: TextStyle(fontSize: 15),
                         ),
                       ),
@@ -160,7 +160,7 @@ class MainScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(18.0),
                         ),
                         onPressed: () {
-                          Navigator.pushNamed(context, '/MainScreen');
+                          Navigator.pushNamed(context, '/AboutUs');
                         },
 
                         // color: Color(0xff311b92),
