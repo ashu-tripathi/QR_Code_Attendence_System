@@ -6,6 +6,8 @@ import 'package:qr_code_attendence_system/registration_screen.dart';
 import 'package:qr_code_attendence_system/student_page.dart';
 import 'package:qr_code_attendence_system/faculty_page.dart';
 import 'package:qr_code_attendence_system/aboutus.dart';
+import 'package:qr_code_attendence_system/qr_generator.dart';
+import 'package:qr_code_attendence_system/qr_scanner.dart';
 
 void main() {
   runApp(MyApp());
@@ -25,6 +27,9 @@ class MyApp extends StatelessWidget {
         '/StudentPage':(context)=>StudentPage(),
         '/FacultyPage':(context)=>FacultyPage(),
         '/AboutUs':(context)=>AboutUs(),
+        '/QrGenerator':(context)=>QrGenerator(),
+        '/QrScanner':(context)=>QrScanner(),
+
 
 
       },
