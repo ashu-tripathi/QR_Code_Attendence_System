@@ -28,17 +28,17 @@ class WelcomeScreen extends StatelessWidget {
                       Container(
                         child: Image(
                           image: AssetImage(
-                            'images/logo.jpg',
+                            'images/logo2.jpg',
                           ),
                           height: 110.0,
-                          width: 110.0,
+                          width: 170.0,
                         ),
                       ),
                       SizedBox(
                         height: 50.0,
                       ),
                       Center(
-                        child: Text('Welcome to',
+                        child: Text('Welcome to QR',
                             style: TextStyle(
                               fontFamily: 'Lobster',
                               letterSpacing: 1.5,

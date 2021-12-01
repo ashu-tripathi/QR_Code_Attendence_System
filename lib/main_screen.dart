@@ -10,11 +10,11 @@ class MainScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          title: Text('Attendence Portal'),
+          title: Text(' QR Attendence Portal'),
           backgroundColor: Colors.green,
         ),
         body: Container(
-          margin: EdgeInsets.fromLTRB(20, 30, 20, 30),
+          margin: EdgeInsets.fromLTRB(15, 20, 15, 20),
           padding: EdgeInsets.all(20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -24,7 +24,7 @@ class MainScreen extends StatelessWidget {
                   children: [
                     Image(
                       height: 60,
-                      image: AssetImage('images/logo.jpg'),
+                      image: AssetImage('images/teacher1.png'),
                     ),
                     SizedBox(height: 10),
                     Text(
@@ -83,7 +83,7 @@ class MainScreen extends StatelessWidget {
                   children: [
                     Image(
                       height: 60,
-                      image: AssetImage('images/logo.jpg'),
+                      image: AssetImage('images/student3.png'),
                     ),
                     SizedBox(height: 10),
                     Text(
@@ -142,7 +142,7 @@ class MainScreen extends StatelessWidget {
                   children: [
                     Image(
                       height: 60,
-                      image: AssetImage('images/logo.jpg'),
+                      image: AssetImage('images/aboutus.png'),
                     ),
                     SizedBox(height: 10),
                     Text(
