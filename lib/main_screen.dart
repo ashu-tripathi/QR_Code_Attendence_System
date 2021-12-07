@@ -101,14 +101,14 @@ class MainScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(18.0),
                         ),
                         onPressed: () {
-                          Navigator.pushNamed(context, '/RegistrationScreen');
+                          Navigator.pushNamed(context, '/LoginScreen');
                         },
 
                         // color: Color(0xff311b92),
                         color: Colors.green,
                         textColor: Colors.white,
                         child: Text(
-                          'Register',
+                          'Login',
                           style: TextStyle(fontSize: 15),
                         ),
                       ),
