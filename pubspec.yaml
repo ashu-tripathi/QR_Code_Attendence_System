@@ -34,8 +34,8 @@ dependencies:
 #  basic_utils: ^2.6.2
   file_picker: ^1.4.0+1
 #  video_player: ^0.10.2+1
-#  rflutter_alert: ^1.1.0
-#  flutter_downloader: ^1.5.0
+  rflutter_alert: ^1.1.0
+  flutter_downloader: ^1.5.0
 #  downloads_path_provider: ^0.1.0
 #  flushbar: ^1.9.0
 #  dio: ^3.0.10

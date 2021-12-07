@@ -10,7 +10,7 @@ class MainScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          title: Text(' QR Attendence Portal'),
+          title: Text('QR Attendence Portal'),
           backgroundColor: Colors.green,
         ),
         body: Container(
