@@ -13,6 +13,8 @@ class _StudentPageState extends State<StudentPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomPadding: false,
         drawer: NavBarStu(),
         appBar: AppBar(
           title: Text('Welcome to Student Portal'),

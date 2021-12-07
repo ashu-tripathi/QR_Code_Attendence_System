@@ -39,10 +39,10 @@ class HelperFunctions {
   //       sharedPreferenceChatRoomIdKey, chatRoomId);
   // }
 
-  // static Future<bool> saveUserRoleSharedPreference(String role) async {
-  //   SharedPreferences preferences = await SharedPreferences.getInstance();
-  //   return await preferences.setString(sharedPreferenceChatRoleKey, role);
-  // }
+  static Future<bool> saveUserRoleSharedPreference(String role) async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    return await preferences.setString(sharedPreferenceChatRoleKey, role);
+  }
 
   // static Future<bool> saveUserFeedbackSharedPreference(String feedback) async {
   //   SharedPreferences preferences = await SharedPreferences.getInstance();
@@ -66,10 +66,10 @@ class HelperFunctions {
     return await preferences.getString(sharedPreferenceUserEmailKey);
   }
 
-  // static Future<String> getUserRoleSharedPreference() async {
-  //   SharedPreferences preferences = await SharedPreferences.getInstance();
-  //   return await preferences.getString(sharedPreferenceChatRoleKey);
-  // }
+  static Future<String> getUserRoleSharedPreference() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    return await preferences.getString(sharedPreferenceChatRoleKey);
+  }
 
   static Future<String> getUserPhotoUrlSharedPreference() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();

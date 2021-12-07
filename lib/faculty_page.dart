@@ -14,6 +14,8 @@ class _FacultyPageState extends State<FacultyPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomPadding: false,
         drawer: NavBarFac(),
         appBar: AppBar(
           title: Text('Welcome to Faculty Portal'),

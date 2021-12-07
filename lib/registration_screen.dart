@@ -298,7 +298,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                         hintStyle: TextStyle(
                                           color: Colors.grey,
                                         ),
-                                        labelText: 'Username *',
+                                        labelText: 'ID *',
                                       ),
                                       validator:
                                       RegexValidator.validateUserName,
@@ -377,9 +377,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                                 HelperFunctions
                                                     .saveUserPhotoUrlSharedPreference(
                                                     url);
-                                                // HelperFunctions
-                                                //     .saveUserRoleSharedPreference(
-                                                //     role);
+                                                HelperFunctions
+                                                    .saveUserRoleSharedPreference(
+                                                    role);
 
                                                 Navigator.pushNamed(
                                                     context, '/FacultyPage');
