@@ -30,9 +30,9 @@ class _FacultyPageState extends State<FacultyPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Date:- 12th Dec 2021',style: TextStyle(fontWeight: FontWeight.bold),),
+                  Text('Date:- 5th Feb 2022',style: TextStyle(fontWeight: FontWeight.bold),),
                   SizedBox(width:20),
-                  Text('Day:-Monday',style: TextStyle(fontWeight: FontWeight.bold),),
+                  Text('Day:-Saturday',style: TextStyle(fontWeight: FontWeight.bold),),
                 ],
 
               ),
@@ -104,11 +104,11 @@ class _FacultyPageState extends State<FacultyPage> {
                           child: Column(crossAxisAlignment: CrossAxisAlignment.start,
 
                             children: [
-                              Text('Leture 1',style: TextStyle(fontWeight: FontWeight.bold),),
-                              Text('Lecture Timings:- 10 Am - 11 Am'),
-                              Text('Sub Name:-MNG'),
-                              Text('Subject Code:-MBAH 001'),
-                              Text('Room No:-4001'),
+                              Text('Leture 2',style: TextStyle(fontWeight: FontWeight.bold),),
+                              Text('Lecture Timings:- 11 Am - 12 Pm'),
+                              Text('Sub Name:-Agile'),
+                              Text('Subject Code:-AGLE 001'),
+                              Text('Room No:-4002'),
                             ],
                           ),
                         ),
@@ -153,11 +153,11 @@ class _FacultyPageState extends State<FacultyPage> {
                           child: Column(crossAxisAlignment: CrossAxisAlignment.start,
 
                             children: [
-                              Text('Leture 1',style: TextStyle(fontWeight: FontWeight.bold),),
-                              Text('Lecture Timings:- 10 Am - 11 Am'),
-                              Text('Sub Name:-MNG'),
-                              Text('Subject Code:-MBAH 001'),
-                              Text('Room No:-4001'),
+                              Text('Leture 3',style: TextStyle(fontWeight: FontWeight.bold),),
+                              Text('Lecture Timings:- 1 Pm - 2 Pm'),
+                              Text('Sub Name:-Industrial MNG'),
+                              Text('Subject Code:-INDM 001'),
+                              Text('Room No:-4003'),
                             ],
                           ),
                         ),
@@ -201,11 +201,11 @@ class _FacultyPageState extends State<FacultyPage> {
                           child: Column(crossAxisAlignment: CrossAxisAlignment.start,
 
                             children: [
-                              Text('Leture 1',style: TextStyle(fontWeight: FontWeight.bold),),
-                              Text('Lecture Timings:- 10 Am - 11 Am'),
-                              Text('Sub Name:-MNG'),
-                              Text('Subject Code:-MBAH 001'),
-                              Text('Room No:-4001'),
+                              Text('Leture 4',style: TextStyle(fontWeight: FontWeight.bold),),
+                              Text('Lecture Timings:- 2 Pm - 3 Pm'),
+                              Text('Sub Name:-Compiler'),
+                              Text('Subject Code:-COMP 001'),
+                              Text('Room No:-4004'),
                             ],
                           ),
                         ),
