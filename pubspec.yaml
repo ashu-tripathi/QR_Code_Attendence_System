@@ -14,10 +14,10 @@ dependencies:
 
 
 
-#  qr_code_scanner: ^0.3.1  ye krna padha ...   #0.6.1 ye tha
-#  qr_flutter: ^1.1.1
+  qr_code_scanner: ^0.3.0
+  qr_flutter: ^3.2.0
 #  path_provider: ^0.4.1   ye permanent gone
-#  barcode_scan: ^0.0.4
+#  barcode_scan: ^2.0.1
   cupertino_icons: ^0.1.3
   font_awesome_flutter: ^8.8.1
   modal_progress_hud: ^0.1.3
