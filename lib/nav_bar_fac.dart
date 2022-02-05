@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:qr_code_attendence_system/notes_upload.dart';
 class NavBarFac extends StatelessWidget {
   const NavBarFac({Key key}) : super(key: key);
 
@@ -54,7 +54,7 @@ class NavBarFac extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.notifications),
             title: Text('Upload Notes'),
-            onTap: () => null,
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context)=>NotesUpload()))
           ),
           Divider(),
           ListTile(

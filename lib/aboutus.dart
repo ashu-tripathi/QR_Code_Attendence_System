@@ -20,41 +20,36 @@ class AboutUs extends StatelessWidget {
             ),
           ),
 
-            child: Column(
+            child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Container(margin: EdgeInsets.only(top:30,left:30,right:30),
-                  height: 200,
+                Container(margin: EdgeInsets.only(top:15),
 
-                  child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
+
+                  child: Column(
                     children: [
+
                       CircleAvatar(
-                        radius: 40,
+                        radius: 30,
                         child: ClipOval(
                           child: Image.asset('images/shashank.jpg',
-                              width: 300, height: 300, fit: BoxFit.cover),
+                              fit: BoxFit.cover,height: 250,width:250),
                         ),
                       ),
                       Text(
                         "Shashank Agrawal",
-                        style: TextStyle(fontSize: 25, color: Colors.white),
+                        style: TextStyle(fontSize: 20, color: Colors.white),
                       ),
                       Text(
                         "181500652 (H-55)",
-                        style: TextStyle(fontSize: 21, color: Colors.white),
+                        style: TextStyle(fontSize: 17, color: Colors.white),
                       ),
 
                       Text(
                         "shashank.agrawal_cs18@gla.ac.in",
-                        style: TextStyle(fontSize: 18, color: Colors.indigo),
+                        style: TextStyle(fontSize: 15, color: Colors.lightGreenAccent,fontWeight: FontWeight.bold),
                       ),
-                      Text(
-                        "6388435519",
-                        style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
-                      ),
+
                     ],
                   ),
                 ),
@@ -63,6 +58,102 @@ class AboutUs extends StatelessWidget {
                   color: Colors.white,
                   height: 10,
                   thickness: 1,
+                ),
+
+                Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+
+                    CircleAvatar(
+                      radius: 30,
+                      child: ClipOval(
+                        child: Image.asset('images/Ashutosh.jpeg',
+                            fit: BoxFit.cover,height: 250,width:250),
+                      ),
+                    ),
+                    Text(
+                      "Ashutosh Tripathi",
+                      style: TextStyle(fontSize: 20, color: Colors.white),
+                    ),
+                    Text(
+                      "181500152 (H-16)",
+                      style: TextStyle(fontSize: 17, color: Colors.white),
+                    ),
+
+                    Text(
+                      "ashutosh.tripathi_cs18@gla.ac.in",
+                      style: TextStyle(fontSize: 15, color: Colors.lightGreenAccent,fontWeight: FontWeight.bold),
+                    ),
+
+                  ],
+                ),
+                Divider(
+
+                  color: Colors.white,
+                  height: 10,
+                  thickness: 1,
+                ),
+
+                Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+
+                    CircleAvatar(
+                      radius: 30,
+                      child: ClipOval(
+                        child: Image.asset('images/palash.jpeg',
+                            fit: BoxFit.cover,height: 250,width:250),
+                      ),
+                    ),
+                    Text(
+                      "Palash Goyal",
+                      style: TextStyle(fontSize: 20, color: Colors.white),
+                    ),
+                    Text(
+                      "181500443 (J-27)",
+                      style: TextStyle(fontSize: 17, color: Colors.white),
+                    ),
+
+                    Text(
+                      "palash.goyal_cs18@gla.ac.in",
+                      style: TextStyle(fontSize: 15, color: Colors.lightGreenAccent,fontWeight: FontWeight.bold),
+                    ),
+
+                  ],
+                ),
+                Divider(
+
+                  color: Colors.white,
+                  height: 10,
+                  thickness: 1,
+                ),
+
+                Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+
+                    CircleAvatar(
+                      radius: 30,
+                      child: ClipOval(
+                        child: Image.asset('images/satyam.jpeg',
+                            fit: BoxFit.cover,height: 250,width:250),
+                      ),
+                    ),
+                    Text(
+                      "Satyam Merothiya",
+                      style: TextStyle(fontSize: 20, color: Colors.white),
+                    ),
+                    Text(
+                      "181500628 (H-53)",
+                      style: TextStyle(fontSize: 17, color: Colors.white),
+                    ),
+
+                    Text(
+                      "satyam.merothiya_cs18@gla.ac.in",
+                      style: TextStyle(fontSize: 15, color: Colors.lightGreenAccent,fontWeight: FontWeight.bold),
+                    ),
+
+                  ],
                 ),
               ],
             ),
