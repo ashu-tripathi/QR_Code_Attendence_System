@@ -32,7 +32,7 @@ class _NotesUploadState extends State<NotesUpload> {
           backgroundColor: Colors.teal,
         ),
         body: Container(
-          padding: EdgeInsets.all(10),
+          padding: EdgeInsets.all(30),
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

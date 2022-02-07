@@ -1,31 +1,33 @@
 import 'package:flutter/material.dart';
+
 class ButtonWidget extends StatelessWidget {
   final IconData icon;
   final String text;
   final VoidCallback onClicked;
 
-  const ButtonWidget ({
+  const ButtonWidget({
     Key key,
-     this.icon,
+    this.icon,
     this.text,
     this.onClicked(),
-    }) : super(key: key);
+  }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) =>new  RaisedButton(
-    color: Colors.teal,
-    child:buildContent(),
-    onPressed:onClicked,
-  );
+  Widget build(BuildContext context) => new RaisedButton(
+        color: Colors.teal,
+        child: buildContent(),
+        onPressed: onClicked,
+      );
 
-  Widget buildContent()=>Row(
-    mainAxisSize: MainAxisSize.min,
-    children: [
-      Icon(icon,size:20),
-      SizedBox(width: 16),
-      Text(text,
-      style:TextStyle(fontSize: 20,color:Colors.white),),
-    ],
-
-  );
+  Widget buildContent() => Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(icon, size: 30),
+          SizedBox(width: 16),
+          Text(
+            text,
+            style: TextStyle(fontSize: 18, color: Colors.white),
+          ),
+        ],
+      );
 }
