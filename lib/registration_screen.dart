@@ -75,13 +75,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
 
   Future uploadPic(BuildContext context) async {
     String fileName = basename(_image.path);
-    StorageReference firebaseStorageRef =
+    Reference firebaseStorageRef =
     FirebaseStorage.instance.ref().child(fileName);
-    StorageUploadTask uploadTask = firebaseStorageRef.putFile(_image);
-    var dowUrl = await (await uploadTask.onComplete).ref.getDownloadURL();
+    UploadTask uploadTask = firebaseStorageRef.putFile(_image);
+    var dowUrl = await (await uploadTask.whenComplete(() {})).ref.getDownloadURL();
     url = dowUrl.toString();
     print(url);
-    StorageTaskSnapshot taskSnapshot = await uploadTask.onComplete;
+    TaskSnapshot taskSnapshot = await uploadTask.whenComplete(() {});
     setState(() {
       print("Profile Picture uploaded");
       // Scaffold.of(context)

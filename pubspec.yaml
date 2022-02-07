@@ -16,27 +16,32 @@ dependencies:
 
   qr_code_scanner: ^0.3.0
   qr_flutter: ^3.2.0
-#  path_provider: ^0.4.1   ye permanent gone
+  path_provider: ^1.0.8
 #  barcode_scan: ^2.0.1
   cupertino_icons: ^0.1.3
   font_awesome_flutter: ^8.8.1
   modal_progress_hud: ^0.1.3
-
+  path: ^1.7.0
   google_fonts: ^1.1.0
   data_connection_checker: ^0.3.4
   shared_preferences: ^0.5.10
-  firebase_core: ^0.5.0
+
+  firebase_core: ^0.5.0   # yaha 1.0.3 krna hai 0.5.0
   firebase_auth: ^0.18.0+1
-  cloud_firestore: ^0.14.0+2
+
+  cloud_firestore: ^0.14.0+2   #0.17.0 se jaida nhi
+
 
   image_picker: ^0.6.7+7
-  firebase_storage: ^4.0.0
+  firebase_storage: ^5.0.1   #yaha 8.0.3 krna hai target  5.0.1 perfect
 #  basic_utils: ^2.6.2
-  file_picker: ^1.4.0+1
+#  file_picker: ^1.4.0+1
+  file_picker: ^2.0.0
 #  video_player: ^0.10.2+1
   rflutter_alert: ^1.1.0
   flutter_downloader: ^1.5.0
-#  downloads_path_provider: ^0.1.0
+
+  downloads_path_provider: ^0.1.0
 #  flushbar: ^1.9.0
 #  dio: ^3.0.10
 
