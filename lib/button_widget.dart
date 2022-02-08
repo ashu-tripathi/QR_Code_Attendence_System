@@ -14,7 +14,12 @@ class ButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => new RaisedButton(
-        color: Colors.teal,
+    elevation: 5.0,
+
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(18.0),
+    ),
+        color: Colors.green,
         child: buildContent(),
         onPressed: onClicked,
       );
@@ -22,8 +27,8 @@ class ButtonWidget extends StatelessWidget {
   Widget buildContent() => Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(icon, size: 30),
-          SizedBox(width: 16),
+          Icon(icon, size: 25),
+          SizedBox(width: 20),
           Text(
             text,
             style: TextStyle(fontSize: 18, color: Colors.white),

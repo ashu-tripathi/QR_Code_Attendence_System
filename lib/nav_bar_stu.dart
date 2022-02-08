@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:qr_code_attendence_system/notes_download.dart';
 class NavBarStu extends StatelessWidget {
   const NavBarStu({Key key}) : super(key: key);
 
@@ -40,7 +40,7 @@ class NavBarStu extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.notifications),
             title: Text('Check Notes'),
-            onTap: () => null,
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context)=>NotesDownload())),
           ),
           Divider(),
           ListTile(
@@ -67,7 +67,7 @@ class NavBarStu extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.exit_to_app),
             title: Text('Exit'),
-            onTap: () => null,
+            onTap: () => Navigator.of(context).pop(),
           ),
         ],
       ),

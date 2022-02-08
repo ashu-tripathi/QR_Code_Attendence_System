@@ -81,7 +81,7 @@ class NavBarFac extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.exit_to_app),
             title: Text('Exit'),
-            onTap: () => null,
+            onTap: () => Navigator.of(context).pop(),
           ),
         ],
       ),
