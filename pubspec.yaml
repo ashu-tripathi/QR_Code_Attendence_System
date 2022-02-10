@@ -29,7 +29,7 @@ dependencies:
   firebase_core: ^0.5.0   # yaha 1.0.3 krna hai 0.5.0
   firebase_auth: ^0.18.0+1
 
-  cloud_firestore: ^0.14.0+2   #0.17.0 se jaida nhi
+  cloud_firestore: ^0.14.0 #0.17.0 se jaida nhi and 0.13 se less nhi, final=0.14.0+2
 
 
   image_picker: ^0.6.7+7

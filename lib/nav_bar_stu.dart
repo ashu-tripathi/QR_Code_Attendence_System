@@ -33,23 +33,23 @@ class NavBarStu extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.notifications),
+            leading: Icon(Icons.account_box),
             title: Text('Check Attendence'),
             onTap: () => null,
           ),
           ListTile(
-            leading: Icon(Icons.notifications),
+            leading: Icon(Icons.insert_drive_file),
             title: Text('Check Notes'),
             onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context)=>NotesDownload())),
           ),
           Divider(),
           ListTile(
-            leading: Icon(Icons.notifications),
+            leading: Icon(Icons.arrow_drop_down_circle),
             title: Text('Apply Leave'),
             onTap: () => null,
           ),
           ListTile(
-            leading: Icon(Icons.notifications),
+            leading: Icon(Icons.assessment),
             title: Text('Prediction on absent'),
             onTap: () => null,
           ),

@@ -35,38 +35,39 @@ class NavBarFac extends StatelessWidget {
 
 
 
-          ListTile(
-            leading: Icon(Icons.notifications),
-            title: Text('Check Attendence'),
-            onTap: () => null,
-          ),
-          ListTile(
-            leading: Icon(Icons.notifications),
-            title: Text('Mark Youself Present'),
-            onTap: () => null,
-          ),
+          // ListTile(
+          //   leading: Icon(Icons.notifications),
+          //   title: Text('Check Attendence'),
+          //   onTap: () => null,
+          // ),
+          // ListTile(
+          //   leading: Icon(Icons.notifications),
+          //   title: Text('Mark Youself Present'),
+          //   onTap: () => null,
+          // ),
           Divider(),
           ListTile(
-            leading: Icon(Icons.notifications),
+            leading: Icon(Icons.account_box),
             title: Text('Modify Attendence'),
             onTap: () => null,
           ),
           ListTile(
-            leading: Icon(Icons.notifications),
+            leading: Icon(Icons.insert_drive_file),
             title: Text('Upload Notes'),
             onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context)=>NotesUpload()))
           ),
           Divider(),
           ListTile(
-            leading: Icon(Icons.notifications),
+            leading: Icon(Icons.arrow_drop_down_circle),
             title: Text('Apply Leave'),
+
             onTap: () => null,
           ),
-          ListTile(
-            leading: Icon(Icons.notifications),
-            title: Text('Prediction on Absent'),
-            onTap: () => null,
-          ),
+          // ListTile(
+          //   leading: Icon(Icons.notifications),
+          //   title: Text('Prediction on Absent'),
+          //   onTap: () => null,
+          // ),
           Divider(),
           ListTile(
             leading: Icon(Icons.settings),
