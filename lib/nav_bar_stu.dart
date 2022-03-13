@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qr_code_attendence_system/notes_download.dart';
+import 'package:qr_code_attendence_system/apply_leave.dart';
 class NavBarStu extends StatelessWidget {
   const NavBarStu({Key key}) : super(key: key);
 
@@ -46,7 +47,7 @@ class NavBarStu extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.arrow_drop_down_circle),
             title: Text('Apply Leave'),
-            onTap: () => null,
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ApplyLeave())),
           ),
           ListTile(
             leading: Icon(Icons.assessment),

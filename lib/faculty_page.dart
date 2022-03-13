@@ -75,14 +75,14 @@ class _FacultyPageState extends State<FacultyPage> {
                           borderRadius: BorderRadius.circular(18.0),
                         ),
                         onPressed: () {
-                          Navigator.pushNamed(context, '/QrGenerator');
+                          Navigator.pushNamed(context, '/QrScanner');
                         },
 
                         // color: Color(0xff311b92),
                         color: Colors.green,
                         textColor: Colors.white,
                         child: Text(
-                          'QR Generate',
+                          'Qr Scanner',
                           style: TextStyle(fontSize: 10),
                         ),
                       ),
@@ -124,14 +124,14 @@ class _FacultyPageState extends State<FacultyPage> {
                             borderRadius: BorderRadius.circular(18.0),
                           ),
                           onPressed: () {
-                            Navigator.pushNamed(context, '/QrGenerator');
+                            Navigator.pushNamed(context, '/QrScanner');
                           },
 
                           // color: Color(0xff311b92),
                           color: Colors.green,
                           textColor: Colors.white,
                           child: Text(
-                            'QR Generate',
+                            'Qr Scanner',
                             style: TextStyle(fontSize: 10),
                           ),
                         ),
@@ -173,14 +173,14 @@ class _FacultyPageState extends State<FacultyPage> {
                             borderRadius: BorderRadius.circular(18.0),
                           ),
                           onPressed: () {
-                            Navigator.pushNamed(context, '/QrGenerator');
+                            Navigator.pushNamed(context, '/QrScanner');
                           },
 
                           // color: Color(0xff311b92),
                           color: Colors.green,
                           textColor: Colors.white,
                           child: Text(
-                            'QR Generate',
+                            'Qr Scanner',
                             style: TextStyle(fontSize: 10),
                           ),
                         ),
@@ -221,14 +221,14 @@ class _FacultyPageState extends State<FacultyPage> {
                             borderRadius: BorderRadius.circular(18.0),
                           ),
                           onPressed: () {
-                            Navigator.pushNamed(context, '/QrGenerator');
+                            Navigator.pushNamed(context, '/QrScanner');
                           },
 
                           // color: Color(0xff311b92),
                           color: Colors.green,
                           textColor: Colors.white,
                           child: Text(
-                            'QR Generate',
+                            'Qr Scanner',
                             style: TextStyle(fontSize: 10),
                           ),
                         ),

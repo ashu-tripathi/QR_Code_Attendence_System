@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qr_code_attendence_system/apply_leave.dart';
 import 'package:qr_code_attendence_system/welcome_screen.dart';
 import 'package:qr_code_attendence_system/main_screen.dart';
 import 'package:qr_code_attendence_system/login_screen.dart';
@@ -9,6 +10,7 @@ import 'package:qr_code_attendence_system/aboutus.dart';
 import 'package:qr_code_attendence_system/qr_generator.dart';
 import 'package:qr_code_attendence_system/qr_scanner.dart';
 import 'package:firebase_core/firebase_core.dart';
+
 
  import 'helperfunction.dart';
 void main() async {
@@ -53,6 +55,9 @@ class _MyAppState extends State<MyApp> {
         '/AboutUs': (context) => AboutUs(),
         '/QrGenerator': (context) => QrGenerator(),
         '/QrScanner': (context) => QrScanner(),
+        '/ApplyLeave': (context) => ApplyLeave(),
+
+
       },
     );
   }

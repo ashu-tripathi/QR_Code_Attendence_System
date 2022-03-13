@@ -76,14 +76,14 @@ class _StudentPageState extends State<StudentPage> {
                           borderRadius: BorderRadius.circular(18.0),
                         ),
                         onPressed: () {
-                          Navigator.pushNamed(context, '/QrScanner');
+                          Navigator.pushNamed(context, '/QrGenerator');
                         },
 
                         // color: Color(0xff311b92),
                         color: Colors.green,
                         textColor: Colors.white,
                         child: Text(
-                          'QR Scanner',
+                          'Qr Generator',
                           style: TextStyle(fontSize: 10),
                         ),
                       ),
@@ -122,14 +122,14 @@ class _StudentPageState extends State<StudentPage> {
                           borderRadius: BorderRadius.circular(18.0),
                         ),
                         onPressed: () {
-                          Navigator.pushNamed(context, '/QrScanner');
+                          Navigator.pushNamed(context, '/QrGenerator');
                         },
 
                         // color: Color(0xff311b92),
                         color: Colors.green,
                         textColor: Colors.white,
                         child: Text(
-                          'QR Scanner',
+                          'Qr Generator',
                           style: TextStyle(fontSize: 10),
                         ),
                       ),
@@ -168,14 +168,14 @@ class _StudentPageState extends State<StudentPage> {
                           borderRadius: BorderRadius.circular(18.0),
                         ),
                         onPressed: () {
-                          Navigator.pushNamed(context, '/QrScanner');
+                          Navigator.pushNamed(context, '/QrGenerator');
                         },
 
                         // color: Color(0xff311b92),
                         color: Colors.green,
                         textColor: Colors.white,
                         child: Text(
-                          'QR Scanner',
+                          'Qr Generator',
                           style: TextStyle(fontSize: 10),
                         ),
                       ),
@@ -214,14 +214,14 @@ class _StudentPageState extends State<StudentPage> {
                           borderRadius: BorderRadius.circular(18.0),
                         ),
                         onPressed: () {
-                          Navigator.pushNamed(context, '/QrScanner');
+                          Navigator.pushNamed(context, '/QrGenerator');
                         },
 
                         // color: Color(0xff311b92),
                         color: Colors.green,
                         textColor: Colors.white,
                         child: Text(
-                          'QR Scanner',
+                          'Qr Generator',
                           style: TextStyle(fontSize: 10),
                         ),
                       ),
