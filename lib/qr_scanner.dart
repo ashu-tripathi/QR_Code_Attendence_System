@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
+import 'package:qr_code_attendence_system/reference.dart';
 
 class QrScanner extends StatefulWidget {
   const QrScanner({Key key}) : super(key: key);
@@ -15,6 +16,11 @@ class _QrScannerState extends State<QrScanner> {
   final qrkey = GlobalKey(debugLabel: 'QR');
   QRViewController controller;
   Barcode barcode;
+  int threshold = 5; // 5 sec threshold
+  int timeofscan = 0;
+  int timeofgen = 0;
+  int thresholdcheck = 0;
+  int gentime = Reference().generatetime;
 
   @override
   void dispose() {
@@ -34,8 +40,6 @@ class _QrScannerState extends State<QrScanner> {
 
   @override
   Widget build(BuildContext context) {
-    String rollnumber = '181500652'; // ye cheese register se fetch
-
     DateTime qrscan = new DateTime.now();
     int day = qrscan.day;
     int hr = qrscan.hour;
@@ -43,11 +47,9 @@ class _QrScannerState extends State<QrScanner> {
     int min = qrscan.minute;
     int sec = qrscan.second;
 
-    int timeofscan = day*24 + hr * 60 + min * 60 + sec;
-    int timeofgen = 15*60+37*60+30; // ye cheese qrgen se fetch 3:37:30
-    int threshold = 100; // 30 sec threshold
-    int thresholdcheck =timeofscan-timeofgen ;
+    timeofscan = day * 24 + hr * 60 + min * 60 + sec;
 
+    thresholdcheck = timeofscan - gentime;
 
     return SafeArea(
       child: Scaffold(
@@ -58,8 +60,9 @@ class _QrScannerState extends State<QrScanner> {
         body: Stack(
           alignment: Alignment.center,
           children: [
-            Text('$timeofscan',style:TextStyle(color: Colors.white,fontWeight:FontWeight.bold)),
-
+            Text('$timeofscan',
+                style: TextStyle(
+                    color: Colors.white, fontWeight: FontWeight.bold)),
 
             buildQrView(context),
             Positioned(bottom: 10, child: buildResult()), // result method
@@ -77,8 +80,7 @@ class _QrScannerState extends State<QrScanner> {
         color: Colors.white,
       ),
       child: Text(
-        //(thresholdcheck <= threshold)
-        (barcode != null)
+        (thresholdcheck <= threshold)
             ? 'Your attendance marked Successfully'
             : 'Scan a code',
         maxLines: 3,

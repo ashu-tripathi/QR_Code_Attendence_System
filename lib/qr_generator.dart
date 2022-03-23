@@ -1,5 +1,8 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
+import 'package:qr_code_attendence_system/reference.dart';
+import 'package:intl/intl.dart';
 
 class QrGenerator extends StatefulWidget {
   const QrGenerator({Key key}) : super(key: key);
@@ -9,11 +12,10 @@ class QrGenerator extends StatefulWidget {
 }
 
 class _QrGeneratorState extends State<QrGenerator> {
-  // final controller = TextEditingController();
+  Timer timer;
 
-  @override
-  Widget build(BuildContext context) {
-    String rollnumber = '181500652'; // ye cheese register se fetch
+  String time = DateFormat('ddkkmmss').format(DateTime.now());
+  void getTime() {
     DateTime qrgen = new DateTime.now();
     int day = qrgen.day;
     int hr = qrgen.hour;
@@ -21,14 +23,24 @@ class _QrGeneratorState extends State<QrGenerator> {
     int min = qrgen.minute;
     int sec = qrgen.second;
 
-    int timeofgen = 24*day+hr * 60 + min * 60 + sec; //for day * 24 .
-    int timeofscan = 15*60+37*60+30; // ye cheese qrscan se fetch 3:37:30
-    int threshold = 100; // 100 sec threshold
-    int thresholdcheck =timeofscan-timeofgen ;
+    int timeofgen = 24 * day + hr * 60 + min * 60 + sec;
 
+    String newtime = '$day' + '$hr' + '$min' + '$sec';
 
-    String time = '$day' + '$hr' + '$min' + '$sec';
-    String finalqrgen = '$rollnumber' + '$time';
+    setState(() {
+      time = newtime;
+      Reference(generatetime: timeofgen);
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    timer = Timer.periodic(Duration(seconds: 5), (Timer t) => getTime());
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -43,7 +55,7 @@ class _QrGeneratorState extends State<QrGenerator> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  '$finalqrgen',
+                  time,
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -52,8 +64,7 @@ class _QrGeneratorState extends State<QrGenerator> {
                 ),
                 SizedBox(height: 30),
                 QrImage(
-
-                  data: finalqrgen,
+                  data: time,
                   size: 200,
                   backgroundColor: Colors.white,
                   errorStateBuilder: (cxt, err) {
@@ -75,7 +86,7 @@ class _QrGeneratorState extends State<QrGenerator> {
                     color: Colors.white,
                   ),
                   child: Text(
-                    'Please Scan This Properly',
+                    'Please Scan Within 5 Sec',
                     maxLines: 3,
                   ),
                 ),
