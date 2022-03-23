@@ -42,7 +42,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
 
   Future getImages() async {
     PickedFile pickedFile =
-    await ImagePicker().getImage(source: ImageSource.gallery);
+        await ImagePicker().getImage(source: ImageSource.gallery);
     var image = File(pickedFile.path);
 
     setState(() {
@@ -76,9 +76,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   Future uploadPic(BuildContext context) async {
     String fileName = basename(_image.path);
     Reference firebaseStorageRef =
-    FirebaseStorage.instance.ref().child(fileName);
+        FirebaseStorage.instance.ref().child(fileName);
     UploadTask uploadTask = firebaseStorageRef.putFile(_image);
-    var dowUrl = await (await uploadTask.whenComplete(() {})).ref.getDownloadURL();
+    var dowUrl =
+        await (await uploadTask.whenComplete(() {})).ref.getDownloadURL();
     url = dowUrl.toString();
     print(url);
     TaskSnapshot taskSnapshot = await uploadTask.whenComplete(() {});
@@ -142,20 +143,20 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                       Image.asset(
+                      Image.asset(
                         'images/mainlogo.png',
-                         height: 60,
-                         color: Colors.white,
+                        height: 60,
+                        color: Colors.white,
                       ),
-                      SizedBox(height:20),
+                      SizedBox(height: 20),
                       Text(
                         'Qr Attendence Portal',
-                         style: TextStyle(
-                        fontFamily: 'Lobster',
-                        color: Colors.white,
-                        fontSize: 30.0,
-                        fontWeight: FontWeight.w700,
-                      ),
+                        style: TextStyle(
+                          fontFamily: 'Lobster',
+                          color: Colors.white,
+                          fontSize: 30.0,
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
                     ],
                   ),
@@ -188,7 +189,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                   children: [
                                     Text(
                                       'New',
-                                      style:TextStyle(
+                                      style: TextStyle(
                                         fontSize: 30.0,
                                         fontWeight: FontWeight.w700,
                                       ),
@@ -198,7 +199,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                     ),
                                     Text(
                                       'Account',
-                                      style:TextStyle(
+                                      style: TextStyle(
                                         fontSize: 30.0,
                                         fontWeight: FontWeight.w700,
                                       ),
@@ -222,13 +223,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                               height: 80.0,
                                               child: (_image != null)
                                                   ? Image.file(
-                                                _image,
-                                                fit: BoxFit.fill,
-                                              )
+                                                      _image,
+                                                      fit: BoxFit.fill,
+                                                    )
                                                   : Image.asset(
-                                                'images/default-profile.jpg',
-                                                fit: BoxFit.fill,
-                                              ),
+                                                      'images/default-profile.jpg',
+                                                      fit: BoxFit.fill,
+                                                    ),
                                             ),
                                           ),
                                         ),
@@ -264,7 +265,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                 autovalidate: _autoValidate,
                                 child: Column(
                                   mainAxisAlignment:
-                                  MainAxisAlignment.spaceEvenly,
+                                      MainAxisAlignment.spaceEvenly,
                                   children: <Widget>[
                                     TextFormField(
                                       keyboardType: TextInputType.emailAddress,
@@ -301,7 +302,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                         labelText: 'ID *',
                                       ),
                                       validator:
-                                      RegexValidator.validateUserName,
+                                          RegexValidator.validateUserName,
                                       onSaved: (String value) {
                                         username = value;
                                       },
@@ -325,7 +326,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                       ),
                                       obscureText: true,
                                       validator:
-                                      RegexValidator.validatePassword,
+                                          RegexValidator.validatePassword,
                                       onSaved: (String value) {
                                         password = value;
                                       },
@@ -348,7 +349,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                         color: Colors.lightBlueAccent,
                                         onPressed: () async {
                                           bool isShowSpinner =
-                                          _validateInputs();
+                                              _validateInputs();
                                           setState(() {
                                             showSpinner = isShowSpinner;
                                           });
@@ -361,25 +362,25 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
 
                                             await _auth
                                                 .createUserWithEmailAndPassword(
-                                                email: email,
-                                                password: password)
+                                                    email: email,
+                                                    password: password)
                                                 .then((newUser) {
                                               if (newUser != null) {
                                                 HelperFunctions
                                                     .saveUserLoggedInSharedPreference(
-                                                    true);
+                                                        true);
                                                 HelperFunctions
                                                     .saveUserNameSharedPreference(
-                                                    username);
+                                                        username);
                                                 HelperFunctions
                                                     .saveUserEmailSharedPreference(
-                                                    email);
+                                                        email);
                                                 HelperFunctions
                                                     .saveUserPhotoUrlSharedPreference(
-                                                    url);
+                                                        url);
                                                 HelperFunctions
                                                     .saveUserRoleSharedPreference(
-                                                    role);
+                                                        role);
 
                                                 Navigator.pushNamed(
                                                     context, '/FacultyPage');
@@ -402,11 +403,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                                   return RichAlertDialog(
                                                     //uses the custom alert dialog
                                                     alertTitle:
-                                                    richTitle("CONGRATS!"),
+                                                        richTitle("CONGRATS!"),
                                                     alertSubtitle: richSubtitle(
                                                         "Your assign role is ${role.toUpperCase()}"),
                                                     alertType:
-                                                    RichAlertType.SUCCESS,
+                                                        RichAlertType.SUCCESS,
                                                   );
                                                 });
                                           } catch (e) {
@@ -427,7 +428,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                                       alertSubtitle: richSubtitle(
                                                           "Already registered with this email id."),
                                                       alertType:
-                                                      RichAlertType.WARNING,
+                                                          RichAlertType.WARNING,
                                                       actions: <Widget>[
                                                         RaisedButton(
                                                           color: Colors.red,

@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:qr_code_attendence_system/account_setting.dart';
 import 'package:qr_code_attendence_system/apply_leave.dart';
+
 import 'package:qr_code_attendence_system/notes_upload.dart';
+import 'package:qr_code_attendence_system/modify_attendance.dart';
+
 class NavBarFac extends StatelessWidget {
   const NavBarFac({Key key}) : super(key: key);
 
@@ -34,8 +38,6 @@ class NavBarFac extends StatelessWidget {
             ),
           ),
 
-
-
           // ListTile(
           //   leading: Icon(Icons.notifications),
           //   title: Text('Check Attendence'),
@@ -50,19 +52,20 @@ class NavBarFac extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.account_box),
             title: Text('Modify Attendence'),
-            onTap: () => null,
+            onTap: () => Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => ModifyAttendance())),
           ),
           ListTile(
-            leading: Icon(Icons.insert_drive_file),
-            title: Text('Upload Notes'),
-            onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context)=>NotesUpload()))
-          ),
+              leading: Icon(Icons.insert_drive_file),
+              title: Text('Upload Notes'),
+              onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => NotesUpload()))),
           Divider(),
           ListTile(
             leading: Icon(Icons.arrow_drop_down_circle),
             title: Text('Apply Leave'),
-
-            onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ApplyLeave())),
+            onTap: () => Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => ApplyLeave())),
           ),
           // ListTile(
           //   leading: Icon(Icons.notifications),
@@ -73,12 +76,13 @@ class NavBarFac extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.settings),
             title: Text('Account Settings'),
-            onTap: () => null,
+            onTap: () => Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => AccountSetting())),
           ),
           ListTile(
             leading: Icon(Icons.phone),
             title: Text('To Contact'),
-            onTap: () => null,
+            onTap: () => Navigator.of(context).pop(),
           ),
           ListTile(
             leading: Icon(Icons.exit_to_app),

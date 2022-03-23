@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:qr_code_attendence_system/nav_bar_stu.dart';
+import 'package:qr_code_attendence_system/choice.dart';
+import 'package:qr_code_attendence_system/pop_up_menu.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 
 class StudentPage extends StatefulWidget {
   const StudentPage({Key key}) : super(key: key);
@@ -7,6 +11,10 @@ class StudentPage extends StatefulWidget {
   @override
   _StudentPageState createState() => _StudentPageState();
 }
+
+List<Choice> choices = const <Choice>[
+  const Choice(title: 'Log out', icon: FontAwesomeIcons.signOutAlt),
+];
 
 class _StudentPageState extends State<StudentPage> {
   @override
@@ -17,7 +25,15 @@ class _StudentPageState extends State<StudentPage> {
         resizeToAvoidBottomPadding: false,
         drawer: NavBarStu(),
         appBar: AppBar(
-          title: Text('Welcome to Student Portal'),
+          title: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('Welcome to Student Portal'),
+              SizedBox(width:10),
+              Expanded(child: ContactPopupMenu(choices: choices)),
+            ],
+          ),
           backgroundColor: Colors.teal,
         ),
         body: Container(
@@ -75,15 +91,16 @@ class _StudentPageState extends State<StudentPage> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18.0),
                         ),
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/QrGenerator');
+                        onPressed: (){
+
+                          Navigator.pushNamed(context, '/QrScanner');
                         },
 
                         // color: Color(0xff311b92),
                         color: Colors.green,
                         textColor: Colors.white,
                         child: Text(
-                          'Qr Generator',
+                          'Qr Scanner',
                           style: TextStyle(fontSize: 10),
                         ),
                       ),
@@ -122,14 +139,14 @@ class _StudentPageState extends State<StudentPage> {
                           borderRadius: BorderRadius.circular(18.0),
                         ),
                         onPressed: () {
-                          Navigator.pushNamed(context, '/QrGenerator');
+                          Navigator.pushNamed(context, '/QrScanner');
                         },
 
                         // color: Color(0xff311b92),
                         color: Colors.green,
                         textColor: Colors.white,
                         child: Text(
-                          'Qr Generator',
+                          'Qr Scanner',
                           style: TextStyle(fontSize: 10),
                         ),
                       ),
@@ -168,14 +185,14 @@ class _StudentPageState extends State<StudentPage> {
                           borderRadius: BorderRadius.circular(18.0),
                         ),
                         onPressed: () {
-                          Navigator.pushNamed(context, '/QrGenerator');
+                          Navigator.pushNamed(context, '/QrScanner');
                         },
 
                         // color: Color(0xff311b92),
                         color: Colors.green,
                         textColor: Colors.white,
                         child: Text(
-                          'Qr Generator',
+                          'Qr Scanner',
                           style: TextStyle(fontSize: 10),
                         ),
                       ),
@@ -214,14 +231,14 @@ class _StudentPageState extends State<StudentPage> {
                           borderRadius: BorderRadius.circular(18.0),
                         ),
                         onPressed: () {
-                          Navigator.pushNamed(context, '/QrGenerator');
+                          Navigator.pushNamed(context, '/QrScanner');
                         },
 
                         // color: Color(0xff311b92),
                         color: Colors.green,
                         textColor: Colors.white,
                         child: Text(
-                          'Qr Generator',
+                          'Qr Scanner',
                           style: TextStyle(fontSize: 10),
                         ),
                       ),

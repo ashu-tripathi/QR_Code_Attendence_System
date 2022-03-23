@@ -14,9 +14,8 @@ class QrScanner extends StatefulWidget {
 class _QrScannerState extends State<QrScanner> {
   final qrkey = GlobalKey(debugLabel: 'QR');
   QRViewController controller;
-  BuildContext ctx;
-
   Barcode barcode;
+
   @override
   void dispose() {
     controller.dispose();
@@ -35,6 +34,20 @@ class _QrScannerState extends State<QrScanner> {
 
   @override
   Widget build(BuildContext context) {
+    String rollnumber = '181500652'; // ye cheese register se fetch
+
+    DateTime qrscan = new DateTime.now();
+    int day = qrscan.day;
+    int hr = qrscan.hour;
+
+    int min = qrscan.minute;
+    int sec = qrscan.second;
+
+    int timeofscan = day*24 + hr * 60 + min * 60 + sec;
+    int timeofgen = 15*60+37*60+30; // ye cheese qrgen se fetch 3:37:30
+    int threshold = 100; // 30 sec threshold
+    int thresholdcheck =timeofscan-timeofgen ;
+
 
     return SafeArea(
       child: Scaffold(
@@ -45,33 +58,34 @@ class _QrScannerState extends State<QrScanner> {
         body: Stack(
           alignment: Alignment.center,
           children: [
+            Text('$timeofscan',style:TextStyle(color: Colors.white,fontWeight:FontWeight.bold)),
+
+
             buildQrView(context),
             Positioned(bottom: 10, child: buildResult()), // result method
-
           ],
         ),
       ),
     );
   }
 
+  Widget buildResult() {
+    return Container(
+      padding: EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8),
+        color: Colors.white,
+      ),
+      child: Text(
+        //(thresholdcheck <= threshold)
+        (barcode != null)
+            ? 'Your attendance marked Successfully'
+            : 'Scan a code',
+        maxLines: 3,
+      ),
+    );
+  }
 
-  Widget buildResult(){
-
-    return
-    Container(
-            padding: EdgeInsets.all(12),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              color: Colors.white,
-            ),
-            child: Text(
-              barcode != null
-                  ? 'Your attendance marked Successfully'
-                  : 'Scan a code', // success message
-              maxLines: 3,
-            ),
-          );
-   }
   Widget buildQrView(BuildContext context) => QRView(
         key: qrkey,
         onQRViewCreated: onQrViewCreated,

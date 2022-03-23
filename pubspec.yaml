@@ -22,6 +22,7 @@ dependencies:
   font_awesome_flutter: ^8.8.1
   modal_progress_hud: ^0.1.3
   path: ^1.7.0
+  percent_indicator: ^2.1.6
   google_fonts: ^1.1.0
   data_connection_checker: ^0.3.4
   shared_preferences: ^0.5.10

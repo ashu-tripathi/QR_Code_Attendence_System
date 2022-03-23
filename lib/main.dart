@@ -10,6 +10,10 @@ import 'package:qr_code_attendence_system/aboutus.dart';
 import 'package:qr_code_attendence_system/qr_generator.dart';
 import 'package:qr_code_attendence_system/qr_scanner.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:qr_code_attendence_system/modify_attendance.dart';
+import 'package:qr_code_attendence_system/account_setting.dart';
+import 'package:qr_code_attendence_system/contact_details.dart';
+import 'package:qr_code_attendence_system/attendance_page.dart';
 
 
  import 'helperfunction.dart';
@@ -56,6 +60,13 @@ class _MyAppState extends State<MyApp> {
         '/QrGenerator': (context) => QrGenerator(),
         '/QrScanner': (context) => QrScanner(),
         '/ApplyLeave': (context) => ApplyLeave(),
+        '/ModifyAttendance': (context) => ModifyAttendance(),
+        '/AccountSetting': (context) => AccountSetting(),
+        '/ContactDetails': (context) => ContactDetails(),
+        '/AttendancePage': (context) => AttendancePage(),
+
+
+
 
 
       },

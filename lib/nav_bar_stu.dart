@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:qr_code_attendence_system/attendance_page.dart';
 import 'package:qr_code_attendence_system/notes_download.dart';
 import 'package:qr_code_attendence_system/apply_leave.dart';
+import 'package:qr_code_attendence_system/account_setting.dart';
+import 'package:qr_code_attendence_system/contact_details.dart';
 class NavBarStu extends StatelessWidget {
   const NavBarStu({Key key}) : super(key: key);
 
@@ -36,7 +39,7 @@ class NavBarStu extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.account_box),
             title: Text('Check Attendence'),
-            onTap: () => null,
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context)=>AttendancePage())),
           ),
           ListTile(
             leading: Icon(Icons.insert_drive_file),
@@ -49,21 +52,21 @@ class NavBarStu extends StatelessWidget {
             title: Text('Apply Leave'),
             onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ApplyLeave())),
           ),
-          ListTile(
-            leading: Icon(Icons.assessment),
-            title: Text('Prediction on absent'),
-            onTap: () => null,
-          ),
+          // ListTile(
+          //   leading: Icon(Icons.assessment),
+          //   title: Text('Prediction on absent'),
+          //   onTap: () => null,
+          // ),
           Divider(),
           ListTile(
             leading: Icon(Icons.settings),
             title: Text('Account Settings'),
-            onTap: () => null,
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context)=>AccountSetting())),
           ),
           ListTile(
             leading: Icon(Icons.phone),
             title: Text('To Contact'),
-            onTap: () => null,
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ContactDetails())),
           ),
           ListTile(
             leading: Icon(Icons.exit_to_app),
