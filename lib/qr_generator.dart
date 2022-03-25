@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
-import 'package:qr_code_attendence_system/reference.dart';
-import 'package:intl/intl.dart';
+// import 'package:intl/intl.dart';
+import 'package:ntp/ntp.dart';
 
 class QrGenerator extends StatefulWidget {
   const QrGenerator({Key key}) : super(key: key);
@@ -12,32 +12,32 @@ class QrGenerator extends StatefulWidget {
 }
 
 class _QrGeneratorState extends State<QrGenerator> {
-  Timer timer;
-
-  String time = DateFormat('ddkkmmss').format(DateTime.now());
-  void getTime() {
-    DateTime qrgen = new DateTime.now();
-    int day = qrgen.day;
-    int hr = qrgen.hour;
-
-    int min = qrgen.minute;
-    int sec = qrgen.second;
-
-    int timeofgen = 24 * day + hr * 60 + min * 60 + sec;
-
-    String newtime = '$day' + '$hr' + '$min' + '$sec';
-
-    setState(() {
-      time = newtime;
-      Reference(generatetime: timeofgen);
-    });
-  }
-
+   Timer timer;
+  DateTime ntpTime = DateTime.now();
+    // String time = DateFormat('ddkkmmss').format(DateTime.now());
   @override
   void initState() {
     super.initState();
-    timer = Timer.periodic(Duration(seconds: 5), (Timer t) => getTime());
+    loadNTPTime();
+     timer = Timer.periodic(Duration(seconds: 5), (Timer t) => loadNTPTime());
   }
+
+  void loadNTPTime() async {
+    DateTime time2= await NTP.now();
+    setState(()  {               // async
+      // ntpTime = await NTP.now();
+      ntpTime = time2;
+    });
+  }
+   // void getTime() {
+   //
+   //   String newtime = DateFormat('ddkkmmss').format(DateTime.now());
+   //
+   //   setState(() {
+   //     time = newtime;
+   //
+   //   });
+   // }
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +55,8 @@ class _QrGeneratorState extends State<QrGenerator> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  time,
+
+            ntpTime.toLocal().toString(),
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -64,7 +65,8 @@ class _QrGeneratorState extends State<QrGenerator> {
                 ),
                 SizedBox(height: 30),
                 QrImage(
-                  data: time,
+                  // data: ntpTime.toUtc().toString(),
+                  data: ntpTime.toLocal().toString(),
                   size: 200,
                   backgroundColor: Colors.white,
                   errorStateBuilder: (cxt, err) {

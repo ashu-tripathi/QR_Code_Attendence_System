@@ -2,8 +2,9 @@ import 'dart:io' show Platform;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:qr_code_attendence_system/attendance_records.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
-import 'package:qr_code_attendence_system/reference.dart';
+import 'package:ntp/ntp.dart';
 
 class QrScanner extends StatefulWidget {
   const QrScanner({Key key}) : super(key: key);
@@ -13,14 +14,21 @@ class QrScanner extends StatefulWidget {
 }
 
 class _QrScannerState extends State<QrScanner> {
-  final qrkey = GlobalKey(debugLabel: 'QR');
+  final GlobalKey qrkey = GlobalKey(debugLabel: 'QR');
   QRViewController controller;
   Barcode barcode;
-  int threshold = 5; // 5 sec threshold
-  int timeofscan = 0;
-  int timeofgen = 0;
-  int thresholdcheck = 0;
-  int gentime = Reference().generatetime;
+  int threshold = 5; // 20 sec threshold
+  DateTime ntpScanTime = DateTime.now();
+
+
+  String finalText = 'Scan QR Code';
+
+  @override
+  void initState() {
+    super.initState();
+
+    // loadNTPTime();
+  }
 
   @override
   void dispose() {
@@ -38,19 +46,17 @@ class _QrScannerState extends State<QrScanner> {
     }
   }
 
+  void loadNTPTime() async {
+    DateTime time2 = await NTP.now();
+    setState(() {
+      // async
+      // ntpTime = await NTP.now();
+      ntpScanTime = time2;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    DateTime qrscan = new DateTime.now();
-    int day = qrscan.day;
-    int hr = qrscan.hour;
-
-    int min = qrscan.minute;
-    int sec = qrscan.second;
-
-    timeofscan = day * 24 + hr * 60 + min * 60 + sec;
-
-    thresholdcheck = timeofscan - gentime;
-
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -60,12 +66,9 @@ class _QrScannerState extends State<QrScanner> {
         body: Stack(
           alignment: Alignment.center,
           children: [
-            Text('$timeofscan',
-                style: TextStyle(
-                    color: Colors.white, fontWeight: FontWeight.bold)),
-
             buildQrView(context),
-            Positioned(bottom: 10, child: buildResult()), // result method
+
+             Positioned(bottom: 10, child: buildResult()), // result method
           ],
         ),
       ),
@@ -80,9 +83,7 @@ class _QrScannerState extends State<QrScanner> {
         color: Colors.white,
       ),
       child: Text(
-        (thresholdcheck <= threshold)
-            ? 'Your attendance marked Successfully'
-            : 'Scan a code',
+        finalText,
         maxLines: 3,
       ),
     );
@@ -100,10 +101,36 @@ class _QrScannerState extends State<QrScanner> {
         ),
       );
   void onQrViewCreated(QRViewController controller) {
-    // setState(() => this.controller = controller);
     this.controller = controller;
     controller.scannedDataStream.listen(
-      (barcode) => setState(() => this.barcode = barcode),
+      (qrbarcode) => setState(() {
+        print(qrbarcode.code);
+        barcode = qrbarcode;
+        fun();
+      }),
     );
   }
+
+  void fun() {
+    print(barcode.code);
+    loadNTPTime();
+    DateTime timeOfGen = DateTime.parse(barcode.code);
+    print(timeOfGen);
+
+    final difference = ntpScanTime.difference(timeOfGen).inSeconds;
+    if (difference <= threshold) {
+      setState(() {
+        AttendanceRecords.totalLectureHeld+=1;
+        AttendanceRecords.noofLectureAttended+=1;
+
+        finalText = 'Your Attendence Marked Successfully Time: '+'$difference';
+      });
+    } else {
+      setState(() {
+        finalText = 'Not A Valid QR Code: '+'$difference';
+      });
+    }
+  }
 }
+
+

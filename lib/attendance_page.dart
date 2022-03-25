@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
+import 'package:qr_code_attendence_system/attendance_records.dart';
 
 class AttendancePage extends StatefulWidget {
   const AttendancePage({Key key}) : super(key: key);
@@ -10,8 +11,30 @@ class AttendancePage extends StatefulWidget {
 }
 
 class _AttendancePageState extends State<AttendancePage> {
-  int leturesheld=30;
-  int attendedletures=28;
+  int leturesheld = 30;
+  int attendedletures = 28;
+  // int x = 0;
+  // int y = 0;
+  double percentage = 93.33;
+
+  // @override
+  // void initState() {
+  //
+  //   super.initState();
+  //   attendance();
+  // }
+
+  // void attendance() {
+  //   x = AttendanceRecords.totalLectureHeld;
+  //   y = AttendanceRecords.noofLectureAttended;
+  //   setState(() {
+  //
+  //     leturesheld = x + leturesheld;
+  //     attendedletures = y + attendedletures;
+  //     percentage = ((attendedletures / leturesheld) * 100);
+  //   });
+  // }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -88,9 +111,9 @@ class _AttendancePageState extends State<AttendancePage> {
                       child: LinearPercentIndicator(
                         width: 325,
                         lineHeight: 20,
-                        percent: 0.9333,
+                        percent: percentage/100,
                         center: Text(
-                          '93.33%',
+                          '$percentage %',
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 15),
                         ),
@@ -104,9 +127,11 @@ class _AttendancePageState extends State<AttendancePage> {
                   ],
                 ),
               ),
-              SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
               Container(
-                margin: EdgeInsets.only(top: 20,left:10),
+                margin: EdgeInsets.only(top: 20, left: 10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -152,7 +177,11 @@ class _AttendancePageState extends State<AttendancePage> {
                       ),
                     ),
                     SizedBox(height: 15),
-                    Divider(color:Colors.black,height:20,thickness: 2,),
+                    Divider(
+                      color: Colors.black,
+                      height: 20,
+                      thickness: 2,
+                    ),
                   ],
                 ),
               ),
