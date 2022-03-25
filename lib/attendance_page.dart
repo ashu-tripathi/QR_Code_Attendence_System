@@ -13,27 +13,31 @@ class AttendancePage extends StatefulWidget {
 class _AttendancePageState extends State<AttendancePage> {
   int leturesheld = 30;
   int attendedletures = 28;
-  // int x = 0;
-  // int y = 0;
+  int x=0;
+  int y=0;
   double percentage = 93.33;
 
-  // @override
-  // void initState() {
-  //
-  //   super.initState();
-  //   attendance();
-  // }
+  @override
+  void initState() {
 
-  // void attendance() {
-  //   x = AttendanceRecords.totalLectureHeld;
-  //   y = AttendanceRecords.noofLectureAttended;
-  //   setState(() {
-  //
-  //     leturesheld = x + leturesheld;
-  //     attendedletures = y + attendedletures;
-  //     percentage = ((attendedletures / leturesheld) * 100);
-  //   });
-  // }
+    super.initState();
+    attendance();
+  }
+
+  void attendance() {
+
+    setState(() {
+      if(AttendanceRecords.totalLectureHeld!=null)  // Safe to use otherwise error is thrown
+        x =AttendanceRecords.totalLectureHeld ;
+      else{x=0;}
+      if(AttendanceRecords.noofLectureAttended!=null)
+        y = AttendanceRecords.noofLectureAttended;
+      else{x=0;}
+      leturesheld = x + leturesheld;
+      attendedletures = y + attendedletures;
+      percentage = ((attendedletures / leturesheld) * 100);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -113,7 +117,7 @@ class _AttendancePageState extends State<AttendancePage> {
                         lineHeight: 20,
                         percent: percentage/100,
                         center: Text(
-                          '$percentage %',
+                          '${percentage.toStringAsFixed(2)} %',
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 15),
                         ),
