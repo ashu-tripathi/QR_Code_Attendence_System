@@ -38,7 +38,7 @@ class NavBarStu extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.account_box),
-            title: Text('Check Attendence'),
+            title: Text('Check Attendance'),
             onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context)=>AttendancePage())),
           ),
           ListTile(

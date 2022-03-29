@@ -51,7 +51,7 @@ class NavBarFac extends StatelessWidget {
           Divider(),
           ListTile(
             leading: Icon(Icons.account_box),
-            title: Text('Modify Attendence'),
+            title: Text('Modify Attendance'),
             onTap: () => Navigator.of(context).push(
                 MaterialPageRoute(builder: (context) => ModifyAttendance())),
           ),

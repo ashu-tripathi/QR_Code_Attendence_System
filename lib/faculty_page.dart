@@ -4,6 +4,7 @@ import 'package:qr_code_attendence_system/nav_bar_fac.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:qr_code_attendence_system/choice.dart';
 import 'package:qr_code_attendence_system/pop_up_menu.dart';
+import 'package:intl/intl.dart';
 
 class FacultyPage extends StatefulWidget {
   const FacultyPage({Key key}) : super(key: key);
@@ -17,8 +18,11 @@ List<Choice> choices = const <Choice>[
 ];
 
 class _FacultyPageState extends State<FacultyPage> {
+
   @override
   Widget build(BuildContext context) {
+    String newtime = DateFormat('dd-MMM-yyyy').format(DateTime.now());
+    String day=DateFormat('EEEE').format(DateTime.now());
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
@@ -45,12 +49,12 @@ class _FacultyPageState extends State<FacultyPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Date:- 5th Feb 2022',
+                      'Date :- $newtime',
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                     SizedBox(width: 20),
                     Text(
-                      'Day:-Saturday',
+                      'Day:- $day',
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                   ],
